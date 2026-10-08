@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldCleanBA - Limpieza Profesional y en Altura</title>
+    <!-- Carga de Tailwind CSS sin aviso de CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- FontAwesome para iconos de redes y navegación -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Variables y clases de modo oscuro/claro */
+        :root {
+            --brand-blue: #0d5c75;
+            --brand-green: #88c425;
+            --brand-blue-dark: #083b4b;
+            --brand-green-light: #a3d959;
+        }
+
+        /* Estilos en modo claro por defecto */
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .bg-custom-card {
+            background-color: #ffffff;
+        }
+
+        .bg-custom-header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .border-custom {
+            border-color: #e2e8f0;
+        }
+
+        /* Estilos en modo oscuro según preferencia del sistema */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0f172a;
+                color: #f1f5f9;
+            }
+
+            .bg-custom-card {
+                background-color: #1e293b;
+            }
+
+            .bg-custom-header {
+                background-color: rgba(15, 23, 42, 0.9);
+                backdrop-filter: blur(8px);
+            }
+
+            .border-custom {
+                border-color: #334155;
+            }
+
+            .text-slate-600 {
+                color: #94a3b8 !important;
+            }
+
+            .text-slate-700 {
+                color: #cbd5e1 !important;
+            }
+        }
+
+        /* Estilos de texto en gradiente (Corregido para linter CSS) */
+        .gradient-text {
+            background: linear-gradient(135deg, #0d5c75 0%, #88c425 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .gradient-text {
+                background: linear-gradient(135deg, #38bdf8 0%, #a3d959 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        /* Colores de marca */
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+
+        .hover-bg-brand-blue:hover { background-color: var(--brand-blue-dark); }
+        
+        .accent-border {
+            border-top: 4px solid var(--brand-green);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Encabezado / Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-custom-header border-b border-custom transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <img src="logoworldCleanBA.jpg" alt="WorldCleanBA Logo" class="h-12 w-auto object-contain rounded-md shadow-sm">
+                    <span class="font-bold text-xl tracking-tight hidden sm:inline">WorldClean<span class="text-brand-green">BA</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#inicio" class="hover:text-green-500 transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-green-500 transition-colors">Servicios</a>
+                    <a href="#contacto" class="hover:text-green-500 transition-colors">Contacto</a>
+                    <a href="#faq" class="hover:text-green-500 transition-colors">Preguntas Frecuentes</a>
+                </nav>
+                <div>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2F81ur32&e=AUDR0CggKT1Hl5g8LPq9YDubOWaj_AHbkV3PCWjqYTss4EUos5-Bs5BxWG3DepB3O82WerY485dDSB6pA0fbQJVJzoJeftdJWMMcOtEMCCfTTPnIv0LIevaH8EwWzKf49hH_kHiCQ_Kj-ucEZxclitu-Rx0FOnRHZw2kjg" 
+                       target="_blank" 
+                       class="inline-flex items-center space-x-2 bg-brand-green text-gray-900 font-semibold px-4 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-md">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Presupuesto</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Espaciador para evitar solapamiento del header fijo -->
+    <div class="h-20"></div>
+
+    <!-- Sección Inicio / Hero -->
+    <section id="inicio" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold uppercase tracking-wider">
+                    Servicio Profesional Garantizado
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+                    Soluciones Integrales de <span class="gradient-text">Limpieza Profesional</span>
+                </h1>
+                <p class="text-lg text-slate-600">
+                    En <strong>WorldCleanBA</strong> somos especialistas en servicios de limpieza de alta calidad. Contamos con personal altamente capacitado y equipamiento de vanguardia para responder a las exigencias más altas tanto en edificaciones, empresas, como en finales de obra y trabajos de altura.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2F81ur32&e=AUDR0CggKT1Hl5g8LPq9YDubOWaj_AHbkV3PCWjqYTss4EUos5-Bs5BxWG3DepB3O82WerY485dDSB6pA0fbQJVJzoJeftdJWMMcOtEMCCfTTPnIv0LIevaH8EwWzKf49hH_kHiCQ_Kj-ucEZxclitu-Rx0FOnRHZw2kjg" 
+                       target="_blank" 
+                       class="text-center bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover-bg-brand-blue transition-colors shadow-lg">
+                        Solicitar Presupuesto
+                    </a>
+                    <a href="https://www.instagram.com/worldcleanba?exln=eDU4aHV5NXk1Z3J3" 
+                       target="_blank" 
+                       class="text-center border border-custom bg-custom-card px-6 py-3 rounded-lg font-semibold hover:border-green-500 transition-colors">
+                        Ver Trabajos en Instagram
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-custom">
+                    <img src="foto3.jpeg" alt="Limpieza Profesional WorldCleanBA" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold tracking-tight mb-4">Nuestros Servicios</h2>
+            <p class="text-slate-600">Ofrecemos soluciones personalizadas adaptadas a las necesidades específicas de cada cliente.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Servicio 1 -->
+            <div class="bg-custom-card rounded-xl p-6 border border-custom shadow-sm accent-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Limpieza General</h3>
+                    <p class="text-slate-600 text-sm">
+                        Mantenimiento integral periódico y profundo para oficinas, comercios, consorcios y residencias con los más altos estándares.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="bg-custom-card rounded-xl p-6 border border-custom shadow-sm accent-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-lg bg-green-100 text-brand-green flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Limpieza Final de Obra</h3>
+                    <p class="text-slate-600 text-sm">
+                        Remoción de restos de obra, polvo fino, restos de pintura y acondicionamiento total para dejar los espacios listos para habitar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="bg-custom-card rounded-xl p-6 border border-custom shadow-sm accent-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-lg bg-blue-100 text-brand-blue flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Vidrios y Pintura en Altura</h3>
+                    <p class="text-slate-600 text-sm">
+                        Especialistas en trabajos verticales de difícil acceso, limpiezas de vidrios exteriores y aplicación de pintura con arneses de seguridad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="bg-custom-card rounded-xl p-6 border border-custom shadow-sm accent-border flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-lg bg-green-100 text-brand-green flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fas fa-rug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Limpieza de Alfombras</h3>
+                    <p class="text-slate-600 text-sm">
+                        Desinfección, higienización y lavado profundo de alfombras y tapizados mediante productos específicos que eliminan manchas y ácaros.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galerías / Galería de fotos entregadas -->
+        <div class="mt-16 grid md:grid-cols-2 gap-8 items-center">
+            <div class="rounded-xl overflow-hidden border border-custom shadow-md">
+                <img src="foto1.jpeg" alt="Limpieza en Altura de Vidrios" class="w-full h-auto object-cover">
+                <div class="p-4 bg-custom-card">
+                    <h4 class="font-bold text-lg">Limpieza en Altura de Vidrios</h4>
+                    <p class="text-slate-600 text-sm">Personal capacitado con normas de seguridad estricta para frentes e interiores.</p>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden border border-custom shadow-md">
+                <img src="foto2.jpeg" alt="Resumen de Servicios WorldCleanBA" class="w-full h-auto object-cover">
+                <div class="p-4 bg-custom-card">
+                    <h4 class="font-bold text-lg">Atención Integral y Cobertura</h4>
+                    <p class="text-slate-600 text-sm">Ofrecemos asesoramiento y presupuestos sin cargo adaptados a tu espacio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-custom-card rounded-2xl border border-custom p-8 md:p-12 shadow-xl">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">¿Necesitás un presupuesto?</h2>
+                    <p class="text-slate-600 mb-6">
+                        Comunicate con nosotros de manera directa o seguinos en nuestras redes sociales para estar al tanto de todos nuestros trabajos e innovaciones.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-lg">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-600">WhatsApp / Teléfono</p>
+                                <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2F81ur32&e=AUDR0CggKT1Hl5g8LPq9YDubOWaj_AHbkV3PCWjqYTss4EUos5-Bs5BxWG3DepB3O82WerY485dDSB6pA0fbQJVJzoJeftdJWMMcOtEMCCfTTPnIv0LIevaH8EwWzKf49hH_kHiCQ_Kj-ucEZxclitu-Rx0FOnRHZw2kjg" 
+                                   target="_blank" 
+                                   class="font-bold hover:text-green-500">
+                                    11 6011-8952
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-lg">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-600">Instagram</p>
+                                <a href="https://www.instagram.com/worldcleanba?exln=eDU4aHV5NXk1Z3J3" 
+                                   target="_blank" 
+                                   class="font-bold hover:text-pink-500">
+                                    @worldcleanba
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col space-y-4 justify-center items-center p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                    <h3 class="text-lg font-bold text-center">Contactanos Hoy Mismo</h3>
+                    <p class="text-sm text-center text-slate-600">Haz clic abajo para chatear directamente por WhatsApp y cotizar tu trabajo.</p>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2F81ur32&e=AUDR0CggKT1Hl5g8LPq9YDubOWaj_AHbkV3PCWjqYTss4EUos5-Bs5BxWG3DepB3O82WerY485dDSB6pA0fbQJVJzoJeftdJWMMcOtEMCCfTTPnIv0LIevaH8EwWzKf49hH_kHiCQ_Kj-ucEZxclitu-Rx0FOnRHZw2kjg" 
+                       target="_blank" 
+                       class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Enviar mensaje por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Preguntas Frecuentes -->
+    <section id="faq" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight mb-2">Preguntas Frecuentes</h2>
+            <p class="text-slate-600">Resolvemos tus dudas sobre nuestro modo de trabajo y contratación.</p>
+        </div>
+
+        <div class="space-y-4">
+            <details class="bg-custom-card border border-custom rounded-lg p-4 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center list-none">
+                    <span>¿Cómo solicito un presupuesto?</span>
+                    <span class="text-brand-green group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-3 text-slate-600 text-sm">
+                    Podés solicitar un presupuesto de forma rápida contactándonos a través de nuestro enlace de WhatsApp o por mensaje directo en Instagram, indicando los detalles del espacio y el servicio requerido.
+                </p>
+            </details>
+
+            <details class="bg-custom-card border border-custom rounded-lg p-4 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center list-none">
+                    <span>¿Cuentan con equipo de seguridad para trabajos en altura?</span>
+                    <span class="text-brand-green group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-3 text-slate-600 text-sm">
+                    Sí, nuestro personal está capacitado en seguridad y trabajo en altura, contando con arneses homologados, sopladores, arneses de suspensión y los permisos requeridos para garantizar un trabajo seguro y profesional.
+                </p>
+            </details>
+
+            <details class="bg-custom-card border border-custom rounded-lg p-4 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center list-none">
+                    <span>¿Qué abarca el servicio de Limpieza Final de Obra?</span>
+                    <span class="text-brand-green group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-3 text-slate-600 text-sm">
+                    Incluye la remoción profunda de sedimentos de construcción, polvillo, pintura en marcos o vidrios, y limpieza de pisos, zócalos y sanitarios para dejar la propiedad completamente impecable y lista para mudanza o inauguración.
+                </p>
+            </details>
+
+            <details class="bg-custom-card border border-custom rounded-lg p-4 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center list-none">
+                    <span>¿Ofrecen servicios a empresas y consorcios?</span>
+                    <span class="text-brand-green group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p class="mt-3 text-slate-600 text-sm">
+                    Sí, brindamos atención personalizada tanto para particulares como para finales de obra corporativos, oficinas comerciales, locales y consorcios de departamentos.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="border-t border-custom py-8 bg-custom-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <img src="logoworldCleanBA.jpg" alt="WorldCleanBA Logo" class="h-8 w-auto">
+                <span class="font-semibold text-sm">WorldCleanBA &copy; 2026. Todos los derechos reservados.</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://www.instagram.com/worldcleanba?exln=eDU4aHV5NXk1Z3J3" target="_blank" class="text-slate-600 hover:text-pink-500 transition-colors text-xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2F81ur32&e=AUDR0CggKT1Hl5g8LPq9YDubOWaj_AHbkV3PCWjqYTss4EUos5-Bs5BxWG3DepB3O82WerY485dDSB6pA0fbQJVJzoJeftdJWMMcOtEMCCfTTPnIv0LIevaH8EwWzKf49hH_kHiCQ_Kj-ucEZxclitu-Rx0FOnRHZw2kjg" target="_blank" class="text-slate-600 hover:text-green-500 transition-colors text-xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
